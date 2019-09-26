@@ -1,0 +1,56 @@
+﻿{% extends "app/base.html" %}
+
+{% block 标题%}
+文章
+{% endblock 标题%}
+{% block 主体 %}
+<div class="container">
+<div class="nav nav-tabs row">
+    <div class="col-md-6 h1">{{ 警告 }}</div>
+        <div class="col-md-6">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <input name="待办事项" class="btn" type="text" placeholder="待办事项" aria-label="Search" />
+                <button class="btn" type="submit">添加</button>
+            </form>
+        </div>
+    </div>
+<div class="row">
+    
+<table class="table table-bordered">
+  <caption>基本的表格布局</caption>
+  <thead>
+    <tr>
+       <th>序号</th>
+      <th>待办事项</th>
+      <th>完成状态</th>
+       <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+  </thead>
+  <tbody>
+
+      {% for one in 清单 %}
+      <tr>
+        <td>{{ forloop.counter}}</td>
+        <td>{{ one.待办事项 }}</td>
+        <td>{{ one.已完成 }}</td>
+        <td><a class="text-info" href="{% url 'app:删除' forloop.counter %}">删除</a></td>
+        <td><a class="text-info" href="#">划掉</a></td>
+        <td><a class="text-info" href="{% url 'app:修改' %}">修改</a></td>
+
+      </tr>
+        
+      {% endfor %}
+    
+
+  </tbody>
+</table>
+        
+    </div>
+    ============================
+
+</div>
+
+{% endblock 主体 %}

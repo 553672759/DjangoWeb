@@ -1,0 +1,96 @@
+﻿{% extends "MyWeb/base.html" %}
+
+{% block 标题%}
+    教程
+{% endblock 标题%}
+
+{% block 主体 %}
+
+{% if 警告%}
+<div class="alert alert-waring alert-dismissible fade show center" role="alert">
+    <strong>{{警告}}</strong> 
+    <button type="button" class="card" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endif %}
+
+{% if 信息%}
+<div class="alert alert-waring alert-dismissible fade show center" role="alert">
+    <strong>{{信息}}</strong> 
+    <button type="button" class="card" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endif %}
+ <div class="col-md-12">
+<div class="nav nav-tabs justify-content-center ">
+    <div class="card border border-success">
+        
+            <form method="POST" action="">
+                {% csrf_token %}
+                <input name="待办事项" class="btn" type="text" placeholder="待办事项" aria-label="Search" />
+                <button class="btn" type="submit">添加</button>
+            </form>
+        </div>
+</div>
+</div>
+<div class="row">   
+<table class="table table-bordered ">
+  <caption>基本的表格布局</caption>
+  <thead>
+    <tr class="table-secondary text-center">
+        <th>序号</th>
+        <th hidden>id</th>
+        <th>待办事项</th>
+        <th>完成状态</th>
+        <th>编辑</th>
+        <th>标记</th>
+        <th>删除</th>
+        <th>状态</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for one in 清单 %}
+      <tr class="text-center ">
+        <td>{{ forloop.counter}}</td>
+        <td hidden>{{ one.id }}</td>
+        <td>{{ one.daiban }}</td>
+        <td>{{ one.yiwancheng }}</td>
+        
+         <td>
+            <form method="get" action="{% url 'MyWeb:编辑' one.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline-primary">编辑</button>
+            </form>
+        </td>
+        <td>
+            <form method="POST" action="{% url 'MyWeb:划掉' one.id %}">
+                {% csrf_token %}
+                <input name="完成状态" type="hidden" value="划掉" />
+                <button type="submit" class="btn btn-outline-secondary">划掉</button>
+            </form>
+        </td>
+        <td>
+            <form method="get" action="{% url 'MyWeb:删除' one.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline-danger">删除</button>
+            </form>
+        </td>
+        <td>
+            <form method="get" action="{% url 'MyWeb:改变' one.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline-info">改变</button>
+            </form>
+        </td>
+       
+      </tr> 
+     {% endfor %}
+    
+
+  </tbody>
+</table>
+        
+</div>
+
+{% endblock 主体 %}
