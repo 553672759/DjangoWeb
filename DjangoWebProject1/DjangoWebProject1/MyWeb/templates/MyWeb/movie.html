@@ -1,0 +1,30 @@
+﻿{% extends "MyWeb/base.html" %}
+
+{% block 标题%}
+    电影
+{% endblock 标题%}
+
+{% block 主体 %}
+
+{% if 警告%}
+<div class="alert alert-waring alert-dismissible fade show center" role="alert">
+    <strong>{{警告}}</strong> 
+    <button type="button" class="card" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endif %}
+
+{% if 信息%}
+<div class="alert alert-waring alert-dismissible fade show center" role="alert">
+    <strong>{{信息}}</strong> 
+    <button type="button" class="card" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endif %}
+
+
+
+
+{% endblock 主体 %}

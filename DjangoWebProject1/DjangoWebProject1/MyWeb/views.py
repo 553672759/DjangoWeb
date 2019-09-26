@@ -74,5 +74,9 @@ def cross(request,forloop_counter):
     else:
         lst[int(forloop_counter)-1]['已完成']=False
     return redirect("MyWeb:教程")
+
+def movie(request):
+
+    return render(request,movie.html)
     
 

@@ -9,6 +9,7 @@ urlpatterns = [
     path('wenzhang',views.wenzhang,name='文章'),
     path('jiaocheng',views.jiaocheng,name='教程'),
     path('xinwen',views.xinwen,name='新闻'),
+    path('movie',views.movie,name='电影'),
 
     path('del/<one_id>',views.delete,name='删除'),
     path('edit/<one_id>',views.edit,name='编辑'),

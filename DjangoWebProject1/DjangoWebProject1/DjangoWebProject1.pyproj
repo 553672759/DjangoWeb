@@ -100,6 +100,7 @@
     <Content Include="MyWeb\templates\MyWeb\base.html" />
     <Content Include="MyWeb\templates\MyWeb\biaodan.html" />
     <Content Include="MyWeb\templates\MyWeb\bianji.html" />
+    <Content Include="MyWeb\templates\MyWeb\movie.html" />
     <Content Include="MyWeb\templates\MyWeb\jiaocheng.html" />
     <Content Include="MyWeb\templates\MyWeb\wenzhang.html" />
     <Content Include="MyWeb\templates\MyWeb\index2.html" />
