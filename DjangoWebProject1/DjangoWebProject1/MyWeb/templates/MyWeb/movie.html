@@ -26,5 +26,43 @@
 
 
 
+    <div class="row">   
+<table class="table table-bordered ">
+  <caption>基本的表格布局</caption>
+  <thead>
+    <tr class="table-secondary text-center">
+        <th>序号</th>
+        <th hidden>id</th>
+        <th>标题</th>
+        <th>链接</th>
+        
+    </tr>
+  </thead>
+  <tbody>
+      {% for theone in movieList %}
+      <tr class="text-center ">
+        <td>{{ forloop.counter}}</td>
+        <td hidden>{{ theone.videoid }}</td>
+        <td>{{ theone.videotitle }}</td>
+        <td>
+            <a href="{{ theone.videolink }}">链接</a>
+          
+          <form method="get" action="{% url 'MyWeb:链接' theone.videoid %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline-primary">链接</button>
+          </form>
+        </td>
+        
+     {% endfor %}
+    
+
+  </tbody>
+</table>
+        
+</div>
+
+
+
+
 
 {% endblock 主体 %}
