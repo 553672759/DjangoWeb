@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpRequest,HttpResponse
 from .models import MywebDblist,MywebVideos
+from django.core.paginator import Paginator,Page,PageNotAnInteger,EmptyPage
 #===========================
 lst = [{'待办事项':'遛狗','已完成':False},
        {'待办事项':'遛猫','已完成':True},
@@ -76,10 +77,61 @@ def cross(request,forloop_counter):
     return redirect("MyWeb:教程")
 
 def movie(request):
-    #print(MywebVideos.objects.get(videoid='002a023d-5c0f-48f6-b388-76f8986dc69a').videotitle)
-    #content = { 'movieList' : MywebVideos.objects.get(videoid='002a023d-5c0f-48f6-b388-76f8986dc69a')}
-    content = { 'movieList' : MywebVideos.objects.all()[:10]}
-     
-    return render(request,"MyWeb/movie.html",content)
+    current_page = request.GET.get('page')#GET会自动转换INT
     
+    movielist = MywebVideos.objects.all()
+    paginator = Paginator(movielist,20)
+    try:
+        posts = paginator.page(current_page)
+    except PageNotAnInteger as e:
+        posts = paginator.page(1)
+    except EmptyPage as e:
+        posts = paginator.page(1)
+
+
+    content = { 'posts' : posts}
+    return render(request,"MyWeb/movie.html",{ 'posts' : posts})
+
+def lianjie(request,theone_videoid):
+
+    return render(request,"MyWeb/movie.html")
+
+
+
+from django.views import View
+"""
+    
+"""
+class Login(View):
+
+    #请求之前执行的方法
+    def dispatch(self, request, *args, **kwargs):
+        print('before')
+        return super().dispatch(request, *args, **kwargs)
+
+    def get(self):
+        return render(HttpRequest,'login.html')
+
+    def post(self):
+        print('')
+        return render(HttpRequest,'login.html')
+
+    def put(self):
+        pass
+    def delete(self):
+        pass
+
+class PageInfo(object):
+
+    def _init_(self,current_page,per_page):
+        self.current_page=current_page
+        self.per_page=per_page
+
+    def start(self):
+        return (self.current_page-1) * self.per_page
+
+    def end(self):
+        return self.current_page * self.per_page
+
+
 
