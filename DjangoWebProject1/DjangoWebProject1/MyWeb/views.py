@@ -96,7 +96,9 @@ def lianjie(request,theone_videoid):
 
     return render(request,"MyWeb/movie.html")
 
+def layout(request):
 
+    return render(request,"MyWeb/layout.html")
 
 from django.views import View
 """

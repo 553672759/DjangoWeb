@@ -6,7 +6,7 @@ from MyWeb import views
 app_name = 'MyWeb'
 urlpatterns = [
     path('',views.index,name='主页'),
-                                           
+    path('lay',views.layout),                                       
     path('wenzhang',views.wenzhang,name='文章'),
     path('jiaocheng',views.jiaocheng,name='教程'),
     path('xinwen',views.xinwen,name='新闻'),

@@ -25,8 +25,21 @@
 {% endif %}
 
 
+<div>
+    {% if posts.has_previous %}
+        <a href="/movie?page={{posts.previous_page_number}}">上一页</a>
+    {% endif%}
 
-    <div class="row">   
+    <!--{% for num in posts.paginator.page_range %}
+        <a href="/movie?page={{num}}">{{num}}</a>
+    {% endfor %}
+    -->
+
+    {% if posts.has_next %}
+        <a href="/movie?page={{posts.next_page_number}}">下一页</a>
+    {% endif%}
+</div>
+<div class="row">   
 <table class="table table-bordered ">
   <caption>基本的表格布局</caption>
   <thead>
@@ -54,17 +67,7 @@
 
   </tbody>
 </table>
-<div>
-    {% if posts.has_previous %}
-        <a href="/movie?page={{posts.previous_page_number}}">上一页</a>
-    {% endif%}
-    {% for num in posts.paginator.page_range %}
-    <a href="/movie?page={{num}}">{{num}}</a>
-    {% endfor %}
-    {% if posts.has_next %}
-        <a href="/movie?page={{posts.next_page_number}}">下一页</a>
-    {% endif%}
-</div>
+
         
         
         

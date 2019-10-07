@@ -19,6 +19,10 @@ class MywebVideos(models.Model):
     videotag = models.CharField(db_column='VideoTag', max_length=255, blank=True, null=True)  # Field name made lowercase.
     videoimg = models.CharField(db_column='VideoImg', max_length=255, blank=True, null=True)  # Field name made lowercase.
 
+    #打印对象时，会打印videotitle
+    def __str__(self):
+        return self.videotitle
+
     class Meta:
         managed = False
         db_table = 'MyWeb_Videos'
