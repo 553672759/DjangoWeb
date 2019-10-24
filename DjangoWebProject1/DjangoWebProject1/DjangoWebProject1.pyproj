@@ -41,6 +41,14 @@
     </Compile>
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
+    <Compile Include="DBweb\admin.py" />
+    <Compile Include="DBweb\apps.py" />
+    <Compile Include="DBweb\migrations\__init__.py" />
+    <Compile Include="DBweb\models.py" />
+    <Compile Include="DBweb\tests.py" />
+    <Compile Include="DBweb\urls.py" />
+    <Compile Include="DBweb\views.py" />
+    <Compile Include="DBweb\__init__.py" />
     <Compile Include="MyWeb\admin.py" />
     <Compile Include="MyWeb\apps.py" />
     <Compile Include="MyWeb\models.py" />
@@ -66,6 +74,10 @@
     <Folder Include="app\static\app\scripts\" />
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
+    <Folder Include="DBweb\" />
+    <Folder Include="DBweb\migrations\" />
+    <Folder Include="DBweb\templates\" />
+    <Folder Include="DBweb\templates\DBweb\" />
     <Folder Include="DjangoWebProject1\" />
     <Folder Include="MyWeb\" />
     <Folder Include="MyWeb\static\" />
@@ -103,6 +115,7 @@
     <Content Include="app\templates\app\muban.html" />
     <Content Include="app\templates\app\biaodan.html" />
     <Content Include="app\templates\app\wenzhang.html" />
+    <Content Include="DBweb\templates\DBweb\index.html" />
     <Content Include="MyWeb\static\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="MyWeb\static\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="MyWeb\static\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
