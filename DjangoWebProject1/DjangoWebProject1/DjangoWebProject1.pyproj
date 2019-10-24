@@ -140,10 +140,12 @@
     <Content Include="MyWeb\static\font-awesome-4.7.0\scss\_screen-reader.scss" />
     <Content Include="MyWeb\static\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="MyWeb\static\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="MyWeb\templates\MyWeb\laoedit.html" />
     <Content Include="MyWeb\templates\MyWeb\layout.html" />
     <Content Include="MyWeb\templates\MyWeb\base.html" />
     <Content Include="MyWeb\templates\MyWeb\biaodan.html" />
     <Content Include="MyWeb\templates\MyWeb\bianji.html" />
+    <Content Include="MyWeb\templates\MyWeb\laoindex.html" />
     <Content Include="MyWeb\templates\MyWeb\movie.html" />
     <Content Include="MyWeb\templates\MyWeb\jiaocheng.html" />
     <Content Include="MyWeb\templates\MyWeb\wenzhang.html" />
@@ -174,6 +176,7 @@
     <Content Include="app\static\app\scripts\respond.js" />
     <Content Include="app\static\app\scripts\respond.min.js" />
     <Content Include="app\static\app\scripts\_references.js" />
+    <Content Include="uwsgi.ini" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.html">

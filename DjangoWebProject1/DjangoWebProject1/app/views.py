@@ -45,7 +45,7 @@ def edit(request):
 
 #=======================================================
 def muban(request):
-    return render(request,"app/muban.html")
+    return render(request,"app/base.html")
 
 def ii(request):
     return render(request,"app/home.html")
@@ -88,3 +88,5 @@ def about(request):
             'year':datetime.now().year,
         }
     )
+def xx(request):
+    return HttpResponse("Hello, world. This is xx !");
