@@ -128,9 +128,15 @@
     <Content Include="DBweb\static\assets\js\bootstrap.bundle.js" />
     <Content Include="DBweb\static\assets\js\JavaScript.js" />
     <Content Include="DBweb\templates\DBweb\base - backup.html" />
+    <Content Include="DBweb\templates\DBweb\base_xx.html" />
     <Content Include="DBweb\templates\DBweb\base.html" />
+    <Content Include="DBweb\templates\DBweb\FWFL.html" />
+    <Content Include="DBweb\templates\DBweb\JXPL.html" />
+    <Content Include="DBweb\templates\DBweb\YJTS.html" />
+    <Content Include="DBweb\templates\DBweb\JXYD.html" />
     <Content Include="DBweb\templates\DBweb\login.html" />
     <Content Include="DBweb\templates\DBweb\index.html" />
+    <Content Include="DBweb\list.txt" />
     <Content Include="MyWeb\static\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="MyWeb\static\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="MyWeb\static\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />

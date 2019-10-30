@@ -8,7 +8,7 @@ from django.contrib import admin
 urlpatterns = [
     #path('admin',admin.site.urls),
     path('MyWeb/', include('MyWeb.urls')), #引用其他URLconfs
-    path('',include('DBweb.urls')),
+    path('DBweb/', include('DBweb.urls')),
     
     #path()有四个参数 route和view，可选参数kwargs和name.
     #参数route 仅匹配//中的,不会匹配GET和POST参数
