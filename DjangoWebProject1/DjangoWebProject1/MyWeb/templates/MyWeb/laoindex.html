@@ -1,0 +1,24 @@
+{% extends "MyWeb/base.html" %}
+
+{% block 标题%}
+    编辑测试
+{% endblock 标题%}
+
+{% block 主体 %}
+
+
+<div class="row">   
+
+
+      <ul>
+      {% for theone in user_list %}
+       <li>theone  | <a href="/laoedit/{{theone}}">编辑</a></li> 
+     {% endfor %}
+      </ul>
+      
+</div>
+
+<script>
+  
+</script>
+{% endblock 主体 %}

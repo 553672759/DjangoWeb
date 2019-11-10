@@ -27,7 +27,7 @@ SECRET_KEY = 'd8dd4a7b-d9cb-448d-aa9e-ec21d2248cf4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -35,25 +35,26 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [ 
     'app',
     'MyWeb',
+    'DBweb',
     # Add your apps here to enable them
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.admin',       #管理员站点
+    'django.contrib.auth',        #认证授权系统
+    'django.contrib.contenttypes',#内容类型框架
+    'django.contrib.sessions',    #会话框架
+    'django.contrib.messages',    #消息框架
+    'django.contrib.staticfiles', #管理静态文件的框架
 ]
 
-MIDDLEWARE_CLASSES = [
-    'django.middleware.security.SecurityMiddleware',
+MIDDLEWARE = (     # 适配Django 2.0
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',     # 目前打开会报错
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    # 'django.contrib.auth.middleware.SessionAuthenticationMiddleware',   
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
+    'django.middleware.security.SecurityMiddleware',
+)
 
 ROOT_URLCONF = 'DjangoWebProject1.urls'
 

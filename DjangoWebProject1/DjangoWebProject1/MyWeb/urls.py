@@ -19,5 +19,15 @@ urlpatterns = [
     path('change/<forloop_counter>',views.change,name='改变'),
     path('huadiao/<forloop_counter>',views.cross,name='划掉'),
 
-    url(r'^login.html$',views.Login.as_view())
+    url(r'^login.html$',views.Login.as_view()),
+    #路由系统
+    url(r'^laoindex/',views.laoindex),
+    #动态路由
+    url(r'^laoedit/(\w+)',views.laoedit),
+    url(r'^laoedit$/(?P<a1>\w+)/(?P<a2>\w+)',views.laoedit2),
+    url(r'^err',views.err),
+    #路由分发
+    url(r'^app/',include('app.urls'))
+
+
 ]           

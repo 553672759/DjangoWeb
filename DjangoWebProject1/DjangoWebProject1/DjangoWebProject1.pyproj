@@ -41,6 +41,14 @@
     </Compile>
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
+    <Compile Include="DBweb\admin.py" />
+    <Compile Include="DBweb\apps.py" />
+    <Compile Include="DBweb\migrations\__init__.py" />
+    <Compile Include="DBweb\models.py" />
+    <Compile Include="DBweb\tests.py" />
+    <Compile Include="DBweb\urls.py" />
+    <Compile Include="DBweb\views.py" />
+    <Compile Include="DBweb\__init__.py" />
     <Compile Include="MyWeb\admin.py" />
     <Compile Include="MyWeb\apps.py" />
     <Compile Include="MyWeb\models.py" />
@@ -66,6 +74,15 @@
     <Folder Include="app\static\app\scripts\" />
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
+    <Folder Include="DBweb\" />
+    <Folder Include="DBweb\migrations\" />
+    <Folder Include="DBweb\static\" />
+    <Folder Include="DBweb\static\assets\" />
+    <Folder Include="DBweb\static\assets\css\" />
+    <Folder Include="DBweb\static\assets\images\" />
+    <Folder Include="DBweb\static\assets\js\" />
+    <Folder Include="DBweb\templates\" />
+    <Folder Include="DBweb\templates\DBweb\" />
     <Folder Include="DjangoWebProject1\" />
     <Folder Include="MyWeb\" />
     <Folder Include="MyWeb\static\" />
@@ -103,6 +120,23 @@
     <Content Include="app\templates\app\muban.html" />
     <Content Include="app\templates\app\biaodan.html" />
     <Content Include="app\templates\app\wenzhang.html" />
+    <Content Include="DBweb\static\assets\css\bootstrap.css" />
+    <Content Include="DBweb\static\assets\css\main.min.css" />
+    <Content Include="DBweb\static\assets\images\favicon-16x16.png" />
+    <Content Include="DBweb\static\assets\images\favicon-32x32.png" />
+    <Content Include="DBweb\static\assets\js\anchor.min.js" />
+    <Content Include="DBweb\static\assets\js\bootstrap.bundle.js" />
+    <Content Include="DBweb\static\assets\js\JavaScript.js" />
+    <Content Include="DBweb\templates\DBweb\base - backup.html" />
+    <Content Include="DBweb\templates\DBweb\base_xx.html" />
+    <Content Include="DBweb\templates\DBweb\base.html" />
+    <Content Include="DBweb\templates\DBweb\FWFL.html" />
+    <Content Include="DBweb\templates\DBweb\JXPL.html" />
+    <Content Include="DBweb\templates\DBweb\YJTS.html" />
+    <Content Include="DBweb\templates\DBweb\JXYD.html" />
+    <Content Include="DBweb\templates\DBweb\login.html" />
+    <Content Include="DBweb\templates\DBweb\index.html" />
+    <Content Include="DBweb\list.txt" />
     <Content Include="MyWeb\static\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="MyWeb\static\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="MyWeb\static\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
@@ -140,10 +174,12 @@
     <Content Include="MyWeb\static\font-awesome-4.7.0\scss\_screen-reader.scss" />
     <Content Include="MyWeb\static\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="MyWeb\static\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="MyWeb\templates\MyWeb\laoedit.html" />
     <Content Include="MyWeb\templates\MyWeb\layout.html" />
     <Content Include="MyWeb\templates\MyWeb\base.html" />
     <Content Include="MyWeb\templates\MyWeb\biaodan.html" />
     <Content Include="MyWeb\templates\MyWeb\bianji.html" />
+    <Content Include="MyWeb\templates\MyWeb\laoindex.html" />
     <Content Include="MyWeb\templates\MyWeb\movie.html" />
     <Content Include="MyWeb\templates\MyWeb\jiaocheng.html" />
     <Content Include="MyWeb\templates\MyWeb\wenzhang.html" />
@@ -174,6 +210,7 @@
     <Content Include="app\static\app\scripts\respond.js" />
     <Content Include="app\static\app\scripts\respond.min.js" />
     <Content Include="app\static\app\scripts\_references.js" />
+    <Content Include="uwsgi.ini" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.html">

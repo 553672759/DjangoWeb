@@ -16,6 +16,7 @@ urlpatterns = [
     path('home',views.home),
     path('muban',views.muban),
     path('ii', views.ii),
+    path('xx',views.xx)
     
     
 

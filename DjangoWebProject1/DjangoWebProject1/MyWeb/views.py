@@ -100,6 +100,41 @@ def layout(request):
 
     return render(request,"MyWeb/layout.html")
 
+def laoindex(request):
+    user_list=[
+
+        'dd1','dd2','dd3'   
+    ]
+    return render(request,'MyWeb/laoindex.html',{'user_list':user_list})
+
+def laoedit(request,arge1):
+    print(arge1)
+    list={"1","2","3"}
+    context={
+        'context_list':list,
+        }                    
+    return render(request,"MyWeb/laoedit.html",context)
+
+def laoedit2(request,a1,a2):
+    print(a1)
+    print(a2)
+    return render(request,"MyWeb/laoedit.html",{"a1":a1})
+
+
+
+def err(request):
+    return HttpResponse("Hello, world. This is err page !");
+
+
+
+
+
+
+
+
+
+
+
 from django.views import View
 """
     
