@@ -2,11 +2,12 @@ from django.urls import path,include
 from app import urls
 from MyWeb import  urls
 from DBweb import urls
-from . import views
+from DBweb import views
 from django.contrib import admin
 
 urlpatterns = [
-    #path('admin',admin.site.urls),
+
+    path('',views.index),
     path('MyWeb/', include('MyWeb.urls')), #引用其他URLconfs
     path('DBweb/', include('DBweb.urls')),
     

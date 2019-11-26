@@ -5,7 +5,9 @@ from django.conf.urls import url
 
 app_name = 'DBweb'
 urlpatterns = [
+    
     url('index',views.index,name='主页'),
+    url('',views.index,name='主页'),
     url('admin', admin.site.urls),
     url('base', views.base),
     url('FWFL',views.FWFL), #服务分类
