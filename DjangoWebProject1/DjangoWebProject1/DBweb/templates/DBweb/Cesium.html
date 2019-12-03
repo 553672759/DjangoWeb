@@ -1,0 +1,93 @@
+﻿
+{% extends "DBweb/base_4_Cesium.html" %}
+
+{% block title%}
+Cesium
+{%endblock title%}
+
+{% block mainarea %}
+  
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.63.1/Build/Cesium/Cesium.js"></script>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.63.1/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+
+
+<div class="" style="position:absolute;height:100%;width:100%;">
+    <div id="cesiumContainer" style="width:100%;height:100%;margin:0;"></div>
+        <script>
+        Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmMmM4YTY3MC1jYTEzLTRkMTItYTgzYi00YmYwNzA2MjI5ZmMiLCJpZCI6MTg5ODgsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1NzQ4MTgxNTN9.iNhUjDAPH20_84spW9cOD7lq4HZnNl-osDa6s4GfTvM';
+
+            //加载arcgic代码
+            mageryProvider:new Cesium.ArcGisMapServerImageryProvider({
+               url : 'https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer'
+            });
+
+            //加载谷歌最新卫星影像图
+            var guge=new Cesium.UrlTemplateImageryProvider({            	
+	            url:'http://www.google.cn/maps/vt?lyrs=s@800&x={x}&y={y}&z={z}',  
+	            tilingScheme:new Cesium.WebMercatorTilingScheme(),            	
+	            minimumLevel:1,            
+	            maximumLevel:20        
+            });
+
+            var viewer = new Cesium.Viewer('cesiumContainer', {
+                baseLayerPicker: false,
+                imageryProvider: guge,
+                //加载地形数据
+                terrainProvider : new Cesium.CesiumTerrainProvider({
+                    url : Cesium.IonResource.fromAssetId(3956),
+                    requestVertexNormals: true,
+                    requestWaterMask: true,
+                })
+            });
+
+            //设置初始化定位
+            viewer.camera.setView({
+                destination: Cesium.Cartesian3.fromDegrees(117, 36.65, 650000.0),//经纬度、高度
+                //视角角都调整
+                // orientation : {
+                //    heading : Cesium.Math.toRadians(0.0),
+                //    pitch : Cesium.Math.toRadians(0.0),
+                //    roll : 0.0
+                //}
+            });
+            //可根据高度改变颜色
+
+
+            //加载3D
+            var dtitles = new Cesium.Cesium3DTileset({
+                url: "../../static/assets/Cesium/tileset.json",
+
+            });
+            
+            
+
+
+            viewer.scene.primitives.add(dtitles);
+            viewer.zoomTo(dtitles)
+
+             var acg2 = new Cesium.ArcGisMapServerImageryProvider({
+                 url: "http://60.216.249.11:6080/arcgis/rest/services/TA/DP_YX/MapServer"
+             }
+             )
+            viewer.imageryLayers.addImageryProvider(acg2);  
+
+            //var city = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
+            //     url : Cesium.IonResource.fromAssetId(10890),
+            //     //skipLevelOfDetail : true,
+            //     //baseScreenSpaceError : 1024,
+            //     //skipScreenSpaceErrorFactor : 16,
+            //     //skipLevels : 1,
+            //     //immediatelyLoadDesiredLevelOfDetail : false,
+            //     //loadSiblings : false,
+            //     //cullWithChildrenBounds : true
+            //}));
+            //var ttstyle = new Cesium.Cesium3DTileSytle({
+
+            //    show: true,
+            //});
+            //city.style = ttstyle;
+
+        </script>
+
+</div>
+{% endblock mainarea %}

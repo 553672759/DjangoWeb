@@ -26,3 +26,6 @@ def JXYD(request):
 #意见投诉
 def YJTS(request):
     return render(request,"DBweb/YJTS.html")
+
+def Cesium(requqest):
+    return render(requqest,"DBweb/Cesium.html")
